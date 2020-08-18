@@ -117,7 +117,12 @@ public class RegisterFormServiceImpl implements RegisterFormService {
 							"Wear a MASK and please follow SOCIAL DISTANCE," + "\n"
 									+ " Registration is done successfully done");
 					mailService.sendMail(mailDTO);
+					isValid = 0;
 
+				}
+				else{
+					logger.error("email or phone number already exists")
+					isValid = 1;
 				}
 				return isValid;
 			} else {
